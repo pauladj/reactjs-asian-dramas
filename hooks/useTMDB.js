@@ -120,9 +120,9 @@ export function useSearchTVShowsTMDB({ searchTerm }) {
 
   const isAllowedLanguage = (tvShow) => {
     const language = tvShow.original_language || "";
-    const accepted_languages = LANGUAGES.flatMap((language) => language.value);
+    const acceptedLanguages = LANGUAGES.flatMap((language) => language.value);
 
-    return accepted_languages.includes(language);
+    return acceptedLanguages.includes(language);
   };
 
   const {

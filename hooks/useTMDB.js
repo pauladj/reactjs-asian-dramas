@@ -116,9 +116,7 @@ export function useSearchDramasTMDB({ searchTerm }) {
   const fetchDramas = ({ pageParam = 1 }) => {
     return baseServerAPIFetch(url, urlParams, pageParam).then((data) => {
       // The API doesn't let us search & filter
-      // so we have to filter manually after searching
-      // We modify the cache so we don't have to filter
-      // twice the same search results
+      // so we have to filter manually
       return filterNonAsianResults(data);
     });
   };

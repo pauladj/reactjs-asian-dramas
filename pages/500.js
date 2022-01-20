@@ -1,4 +1,4 @@
-// pages/404.js
+// pages/500.js
 import Error from "./_error";
 import React from "react";
 

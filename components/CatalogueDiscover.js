@@ -1,5 +1,5 @@
 import React from "react";
-import { useDiscoverTVShowsTMDB } from "../hooks/useTMDB";
+import { useDiscoverDramasTMDB } from "../hooks/useTMDB";
 import CatalogueResults from "./CatalogueResults";
 
 import PropTypes from "prop-types";
@@ -19,7 +19,7 @@ export default function CatalogueDiscover({
     isFetchingNextPage,
     numLoadedResults,
     totalNumResults,
-  ] = useDiscoverTVShowsTMDB({
+  ] = useDiscoverDramasTMDB({
     selectedLanguage,
     selectedOrder,
     selectedStatus,

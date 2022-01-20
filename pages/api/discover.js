@@ -10,7 +10,7 @@ async function fetchDiscoverTMDBData(queryParams) {
   return { data, statusCode };
 }
 
-export async function getTrendingKoreanTVShows() {
+export async function getMostPopularKoreanDramas() {
   const queryParams = {
     sort_by: "popularity.desc",
     with_original_language: "ko",

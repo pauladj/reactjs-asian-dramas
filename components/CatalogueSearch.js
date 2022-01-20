@@ -1,5 +1,5 @@
 import React from "react";
-import { useSearchTVShowsTMDB } from "../hooks/useTMDB";
+import { useSearchDramasTMDB } from "../hooks/useTMDB";
 import CatalogueResults from "./CatalogueResults";
 import PropTypes from "prop-types";
 
@@ -12,7 +12,7 @@ export default function CatalogueSearch({ searchTerm }) {
     hasNextPage,
     isFetchingNextPage,
     numLoadedResults,
-  ] = useSearchTVShowsTMDB({ searchTerm });
+  ] = useSearchDramasTMDB({ searchTerm });
 
   return (
     <>

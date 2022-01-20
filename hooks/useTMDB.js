@@ -20,7 +20,7 @@ const calculateTotalNumResultNum = (data) => {
   return 0;
 };
 
-function baseTMDBFetch(url, urlParams, pageParam) {
+function baseServerAPIFetch(url, urlParams, pageParam) {
   return fetch(
     `${url}?page=${pageParam}&${stringifyUrlParams(urlParams)}`
   ).then((res) => {
@@ -32,19 +32,32 @@ function baseTMDBFetch(url, urlParams, pageParam) {
   });
 }
 
-export function useDiscoverTVShowsTMDB({
-  selectedLanguage,
-  selectedOrder,
-  selectedStatus,
-  selectedAirDate,
-}) {
+export const isAllowedLanguage = (drama) => {
+  const language = drama.original_language || "";
+  const acceptedLanguages = LANGUAGES.flatMap((language) => language.value);
+
+  return acceptedLanguages.includes(language);
+};
+
+export const filterNonAsianResults = (data) => {
+  const filteredResults =
+    data.results?.filter((drama) => isAllowedLanguage(drama)) || [];
+  return { ...data, results: filteredResults };
+};
+
+export function useDiscoverDramasTMDB({
+                                         selectedLanguage,
+                                         selectedOrder,
+                                         selectedStatus,
+                                         selectedAirDate
+                                       }) {
   const urlParams = {
     with_type: 4,
     language: "en-US",
     with_original_language: selectedLanguage,
     sort_by: selectedOrder,
     with_status: selectedStatus,
-    first_air_date_year: selectedAirDate,
+    first_air_date_year: selectedAirDate
   };
 
   const url = "api/discover";
@@ -54,11 +67,11 @@ export function useDiscoverTVShowsTMDB({
     selectedLanguage,
     selectedStatus,
     selectedOrder,
-    selectedAirDate,
+    selectedAirDate
   ];
 
-  const fetchTVShows = ({ pageParam = 1 }) => {
-    return baseTMDBFetch(url, urlParams, pageParam);
+  const fetchDramas = ({ pageParam = 1 }) => {
+    return baseServerAPIFetch(url, urlParams, pageParam);
   };
 
   const {
@@ -67,14 +80,14 @@ export function useDiscoverTVShowsTMDB({
     data,
     fetchNextPage,
     hasNextPage,
-    isFetchingNextPage,
-  } = useInfiniteQuery([...queryKeys], fetchTVShows, {
+    isFetchingNextPage
+  } = useInfiniteQuery([...queryKeys], fetchDramas, {
     getNextPageParam: (lastPage) => {
       const logicalNextPage = lastPage.page + 1;
       return logicalNextPage <= lastPage.total_pages
         ? logicalNextPage
         : undefined;
-    },
+    }
   });
 
   const numLoadedResults = calculateLoadedResultsNum(data);
@@ -88,20 +101,20 @@ export function useDiscoverTVShowsTMDB({
     hasNextPage,
     isFetchingNextPage,
     numLoadedResults,
-    totalNumResults,
+    totalNumResults
   ];
 }
 
-export function useSearchTVShowsTMDB({ searchTerm }) {
+export function useSearchDramasTMDB({ searchTerm }) {
   const urlParams = {
     query: searchTerm,
-    language: "en-US",
+    language: "en-US"
   };
   const url = "api/search";
   const queryKeys = ["search", searchTerm];
 
-  const fetchTVShows = ({ pageParam = 1 }) => {
-    return baseTMDBFetch(url, urlParams, pageParam).then((data) => {
+  const fetchDramas = ({ pageParam = 1 }) => {
+    return baseServerAPIFetch(url, urlParams, pageParam).then((data) => {
       // The API doesn't let us search & filter
       // so we have to filter manually after searching
       // We modify the cache so we don't have to filter
@@ -110,20 +123,10 @@ export function useSearchTVShowsTMDB({ searchTerm }) {
     });
   };
 
-  const filterNonAsianResults = (data) => {
-    const filteredResults =
-      data.results?.filter((tvShow) => isAllowedLanguage(tvShow)) || [];
-    return { ...data, results: filteredResults };
-  };
+
 
   const automaticLoadingPageCount = useRef(0);
 
-  const isAllowedLanguage = (tvShow) => {
-    const language = tvShow.original_language || "";
-    const acceptedLanguages = LANGUAGES.flatMap((language) => language.value);
-
-    return acceptedLanguages.includes(language);
-  };
 
   const {
     isLoading,
@@ -131,14 +134,14 @@ export function useSearchTVShowsTMDB({ searchTerm }) {
     data,
     fetchNextPage,
     hasNextPage,
-    isFetchingNextPage,
-  } = useInfiniteQuery(queryKeys, fetchTVShows, {
+    isFetchingNextPage
+  } = useInfiniteQuery(queryKeys, fetchDramas, {
     getNextPageParam: (lastPage) => {
       const logicalNextPage = lastPage.page + 1;
       return logicalNextPage <= lastPage.total_pages
         ? logicalNextPage
         : undefined;
-    },
+    }
   });
 
   useEffect(() => {
@@ -168,6 +171,6 @@ export function useSearchTVShowsTMDB({ searchTerm }) {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-    numLoadedResults,
+    numLoadedResults
   ];
 }

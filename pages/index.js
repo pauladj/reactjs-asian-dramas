@@ -1,44 +1,48 @@
 import React from "react";
 import HeroHeader from "../components/HeroHeader";
 import Catalogue from "../components/Catalogue";
-import MostPopularKoreanShows from "../components/MostPopularKoreanShows";
+import MostPopularKoreanDramas from "../components/MostPopularKoreanDramas";
 import GoUpButton from "../components/GoUpButton";
-import { getTrendingKoreanTVShows } from "./api/discover";
+import { getMostPopularKoreanDramas } from "./api/discover";
 
-export default function Home({ tvShows, hasError }) {
+export default function Home({ mostPopularKoreanDramas, statusCode }) {
+
+  const mostPopularDramasLoaded = statusCode === 200;
+
   return (
     <>
-      <HeroHeader />
+      <HeroHeader/>
       <main className="w-4/5 m-0 m-auto max-w-screen-xl relative">
-        <GoUpButton />
+        <GoUpButton/>
         <article className="container mx-auto relative">
           <aside className="hidden lg:block">
-            <MostPopularKoreanShows tvShows={tvShows} hasError={hasError} />
+            <MostPopularKoreanDramas dramas={mostPopularKoreanDramas} hasError={!mostPopularDramasLoaded}/>
           </aside>
-          <Catalogue />
+          <Catalogue/>
         </article>
       </main>
     </>
   );
 }
 
-// Get most popular korean tv shows
+// Get most popular korean dramas
 export async function getServerSideProps() {
   const props = {
-    tvShows: null,
-    hasError: false,
+    mostPopularKoreanDramas: null,
+    statusCode: 500
   };
 
   try {
-    const { data, statusCode } = await getTrendingKoreanTVShows();
+    const { data, statusCode } = await getMostPopularKoreanDramas();
 
-    if (!data || statusCode !== 200) {
-      props.hasError = true;
-    } else {
-      props.tvShows = data.results || [];
+    if (statusCode === 200 && data && data.results) {
+      props.mostPopularKoreanDramas = data.results || [];
+      props.statusCode = statusCode;
+    } else if (statusCode !== 200) {
+      props.statusCode = statusCode;
     }
   } catch (e) {
-    props.hasError = true;
+    props.statusCode = 500;
   }
   return { props: props };
 }

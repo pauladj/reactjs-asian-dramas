@@ -37,14 +37,15 @@ export default function CatalogueResults({
           {data.pages.map((page, index) => {
             return (
               <React.Fragment key={index}>
-                {page.results.map((tvShow) => (
+                {page.results.map((drama) => (
                   <CatalogueResultsItem
-                    key={tvShow.id}
-                    voteAverage={tvShow.vote_average}
-                    image={tvShow.poster_path}
-                    firstAirDate={tvShow.first_air_date}
-                    name={tvShow.name}
-                    originalName={tvShow.original_name}
+                    key={drama.id}
+                    id={drama.id}
+                    voteAverage={drama.vote_average}
+                    image={drama.poster_path}
+                    firstAirDate={drama.first_air_date}
+                    name={drama.name}
+                    originalName={drama.original_name}
                   />
                 ))}
               </React.Fragment>

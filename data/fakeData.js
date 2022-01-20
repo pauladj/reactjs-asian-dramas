@@ -1,4 +1,4 @@
-export const tvShows = () => {
+export const dramas = () => {
   return {
     page: 1,
     results: [

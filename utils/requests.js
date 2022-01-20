@@ -19,13 +19,14 @@ export const genericTMDBRequest = async (url, apiName, queryParams) => {
     const stringifyQueryParams = stringifyUrlParams(queryParams);
 
     const res = await fetch(
-      `${process.env.TMDB_SERVER_URL}${url}?api_key=${process.env.TMDB_API_KEY}&${stringifyQueryParams}`
+      `${process.env.TMDB_SERVER_URL}${url}?api_key=${process.env.TMDB_API_KEY}&language=en-US&${stringifyQueryParams}`
     );
 
     const statusCode = res.status;
     const data = await res.json();
 
     if (statusCode !== 200 || !data) {
+      returningStatusCode = statusCode;
       throw new Error(`Invalid request ${res.status}`);
     }
 

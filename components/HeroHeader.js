@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function HeroHeader() {
   return (
@@ -146,10 +147,10 @@ export default function HeroHeader() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <line y1="2" x2="21" y2="2" stroke="white" strokeWidth="4" />
-            <line y1="2" x2="21" y2="2" stroke="white" strokeWidth="4" />
-            <line y1="19" x2="21" y2="19" stroke="white" strokeWidth="4" />
-            <line y1="19" x2="21" y2="19" stroke="white" strokeWidth="4" />
+            <line y1="2" x2="21" y2="2" stroke="white" strokeWidth="4"/>
+            <line y1="2" x2="21" y2="2" stroke="white" strokeWidth="4"/>
+            <line y1="19" x2="21" y2="19" stroke="white" strokeWidth="4"/>
+            <line y1="19" x2="21" y2="19" stroke="white" strokeWidth="4"/>
             <line
               x1="2"
               y1="8.74228e-08"
@@ -260,13 +261,17 @@ export default function HeroHeader() {
         </div>
         {/* end */}
 
-        <h1
-          className="text-2md md:text-[5.25rem] md:leading-[5rem] lg:text-2xl font-bold text-center text-white
+        <Link href="/">
+          <a>
+            <h1
+              className="text-2md md:text-[5.25rem] md:leading-[5rem] lg:text-2xl font-bold text-center text-white
                  container mx-auto pt-36 md:pt-48 pb-24 md:pb-34 lg:pt-52 lg:pb-48"
-        >
-          Discover Asian
-          <span className="text-primary-400 block">TV shows</span>
-        </h1>
+            >
+              Discover Asian
+              <span className="text-primary-400 block">Dramas</span>
+            </h1>
+          </a>
+        </Link>
       </header>
     </>
   );

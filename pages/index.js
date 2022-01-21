@@ -30,7 +30,7 @@ export default function Home({ mostPopularKoreanDramas, statusCode }) {
 // Get most popular korean dramas
 export async function getServerSideProps() {
   const props = {
-    mostPopularKoreanDramas: null,
+    mostPopularKoreanDramas: undefined,
     statusCode: 500,
   };
 

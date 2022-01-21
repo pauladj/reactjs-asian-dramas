@@ -35,7 +35,7 @@ export default function DramaDetails({
           );
         })}
         <span className="px-2">|</span>
-        Episodes {episodeCount != null ? episodeCount : "?"}
+        Episodes {episodeCount !== undefined ? episodeCount : "?"}
       </p>
 
       <p className="text-[1.12rem] text-gray-400 mt-1">

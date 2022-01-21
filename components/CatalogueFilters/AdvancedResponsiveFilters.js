@@ -29,7 +29,7 @@ export default function AdvancedResponsiveFilters({
       const isModalClicked =
         modalRef.current && modalRef.current.contains(event.target);
       const isButtonClicked =
-        buttonRef.current && modalRef.current.contains(event.target);
+        buttonRef.current && buttonRef.current.contains(event.target);
 
       if (isDropdownClicked || isModalClicked || isButtonClicked) {
         // Do nothing if the user clicks inside the modal or dropdown
@@ -101,6 +101,7 @@ export default function AdvancedResponsiveFilters({
   return (
     <div className="relative inline">
       <button
+        ref={buttonRef}
         className={
           "mt-2 relative bg-gray-700 bg-[url('/img/filter-icon.svg'),url('/img/arrow-down-icon.svg')] bg-no-repeat bg-[length:15px_15px,12px_12px] border-gray-700 border-2 rounded-[8px] w-full pl-12 pr-12 p-[.60rem] text-left md:w-fit md:pl-10 md:py-[.45rem] md:mr-4 " +
           styles.two_icons_position

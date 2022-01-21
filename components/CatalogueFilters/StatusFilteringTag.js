@@ -21,7 +21,7 @@ export default function StatusFilteringTag({
   const handleOnClick = () => {
     if (tagValue === selectedStatus) {
       // unselect
-      setSelectedStatus(null);
+      setSelectedStatus(undefined);
     } else {
       setSelectedStatus(tagValue);
     }

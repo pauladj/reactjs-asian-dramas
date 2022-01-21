@@ -76,7 +76,7 @@ const DramaPage = ({ statusCode, dramaData }) => {
 export async function getServerSideProps(params) {
   const props = {
     statusCode: 500,
-    dramaData: null,
+    dramaData: undefined,
   };
 
   try {

@@ -37,7 +37,7 @@ export default function Catalogue() {
 
   return (
     <>
-      <h2 className="text-primary-50 text-sm font-medium mb-6 md:text-lg md:mb-14 md:mt-24 lg:text-xl lg:mt-28">
+      <h2 className="text-primary-50 text-sm font-medium mb-6 md:text-2md md:mb-14 md:mt-24 lg:text-xl lg:mt-28">
         Catalogue
       </h2>
       <CatalogueFiltersContainer

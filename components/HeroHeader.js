@@ -13,7 +13,7 @@ export default function HeroHeader() {
         <Link href="/">
           <a>
             <h1
-              className="text-2md md:text-[5.25rem] md:leading-[5rem] lg:text-2xl font-bold text-center text-white
+              className="text-lg md:text-[5.25rem] md:leading-[5rem] lg:text-2xl font-bold text-center text-white
                  container mx-auto pt-36 md:pt-48 pb-24 md:pb-34 lg:pt-52 lg:pb-48"
             >
               Discover Asian

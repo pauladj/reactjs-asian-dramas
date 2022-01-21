@@ -3,14 +3,14 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./layouts/*.{js,ts,jsx,tsx}"
+    "./layouts/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       backgroundImage: {
         "hero-background":
-          "linear-gradient(to bottom, rgba(45, 50, 130, .5), rgba(2, 14, 52, .1)), linear-gradient(to bottom, rgba(22, 32, 54, 0), #121c29fa), url('/img/castle-header-background.jpg')",
-        },
+          "linear-gradient(to bottom, rgba(45, 50, 130, .5), rgba(2, 14, 52, .1)), linear-gradient(to bottom, rgba(22, 32, 54, 0), #121c29fa), url('/img/castle-header-background.webp')",
+      },
       fontFamily: {
         sans: [
           "Outfit",
@@ -18,17 +18,17 @@ module.exports = {
           "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",
-          "\"Segoe UI\"",
+          '"Segoe UI"',
           "Roboto",
-          "\"Helvetica Neue\"",
+          '"Helvetica Neue"',
           "Arial",
-          "\"Noto Sans\"",
+          '"Noto Sans"',
           "sans-serif",
-          "\"Apple Color Emoji\"",
-          "\"Segoe UI Emoji\"",
-          "\"Segoe UI Symbol\"",
-          "\"Noto Color Emoji\""
-        ]
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
       },
       fontSize: {
         base: ["1rem", { lineHeight: "1.5rem" }],
@@ -44,14 +44,14 @@ module.exports = {
         "2md": ["3.5rem", { lineHeight: "3.7rem" }],
         lg: ["3rem", { lineHeight: "1.75rem" }],
         xl: ["4rem", { lineHeight: "4.3rem" }],
-        "2xl": ["7.5rem", { lineHeight: "7rem" }]
-      }
+        "2xl": ["7.5rem", { lineHeight: "7rem" }],
+      },
     },
     fontWeight: {
       light: 300,
       regular: 400,
       medium: 500,
-      bold: 700
+      bold: 700,
     },
     colors: {
       transparent: "transparent",
@@ -68,7 +68,7 @@ module.exports = {
         700: "#3538CD",
         800: "#2D31A6",
         900: "#2D3282",
-        950: "#020E34"
+        950: "#020E34",
       },
       gray: {
         25: "#FCFCFD",
@@ -81,22 +81,22 @@ module.exports = {
         600: "#475569",
         700: "#344054",
         800: "#1D2939",
-        900: "#101828"
+        900: "#101828",
       },
       error: {
         light: "#FECDCA",
-        dark: "#F97066"
+        dark: "#F97066",
       },
       warning: {
         light: "#FEF0C7",
         medium: "#FDB022",
-        dark: "#B55108"
+        dark: "#B55108",
       },
       success: {
         light: "#D1FADF",
-        dark: "#12B76A"
-      }
-    }
+        dark: "#12B76A",
+      },
+    },
   },
-  plugins: [require("@tailwindcss/forms")]
+  plugins: [require("@tailwindcss/forms")],
 };

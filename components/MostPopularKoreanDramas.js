@@ -44,7 +44,6 @@ export default function MostPopularKoreanDramas({ hasError, dramas }) {
                   </a>
                 </Link>
               </div>
-
             );
           })}
         </div>
@@ -55,5 +54,5 @@ export default function MostPopularKoreanDramas({ hasError, dramas }) {
 
 MostPopularKoreanDramas.propTypes = {
   hasError: PropTypes.bool.isRequired,
-  dramas: PropTypes.array
+  dramas: PropTypes.array,
 };

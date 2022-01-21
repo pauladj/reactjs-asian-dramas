@@ -7,7 +7,7 @@ export default function HeroHeader() {
     <>
       <header className="bg-hero-background bg-top bg-[length:1200px] lg:bg-cover sm:relative">
         {/* decorations */}
-        <BackgroundDecorations/>
+        <BackgroundDecorations />
         {/* end */}
 
         <Link href="/">

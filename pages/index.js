@@ -6,19 +6,21 @@ import GoUpButton from "../components/GoUpButton";
 import { getMostPopularKoreanDramas } from "./api/discover";
 
 export default function Home({ mostPopularKoreanDramas, statusCode }) {
-
   const mostPopularDramasLoaded = statusCode === 200;
 
   return (
     <>
-      <HeroHeader/>
+      <HeroHeader />
       <main className="w-4/5 m-0 m-auto max-w-screen-xl relative">
-        <GoUpButton/>
+        <GoUpButton />
         <article className="container mx-auto relative">
           <aside className="hidden lg:block">
-            <MostPopularKoreanDramas dramas={mostPopularKoreanDramas} hasError={!mostPopularDramasLoaded}/>
+            <MostPopularKoreanDramas
+              dramas={mostPopularKoreanDramas}
+              hasError={!mostPopularDramasLoaded}
+            />
           </aside>
-          <Catalogue/>
+          <Catalogue />
         </article>
       </main>
     </>
@@ -29,7 +31,7 @@ export default function Home({ mostPopularKoreanDramas, statusCode }) {
 export async function getServerSideProps() {
   const props = {
     mostPopularKoreanDramas: null,
-    statusCode: 500
+    statusCode: 500,
   };
 
   try {

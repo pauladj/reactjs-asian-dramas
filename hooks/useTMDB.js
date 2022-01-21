@@ -46,18 +46,18 @@ export const filterNonAsianResults = (data) => {
 };
 
 export function useDiscoverDramasTMDB({
-                                         selectedLanguage,
-                                         selectedOrder,
-                                         selectedStatus,
-                                         selectedAirDate
-                                       }) {
+  selectedLanguage,
+  selectedOrder,
+  selectedStatus,
+  selectedAirDate,
+}) {
   const urlParams = {
     with_type: 4,
     language: "en-US",
     with_original_language: selectedLanguage,
     sort_by: selectedOrder,
     with_status: selectedStatus,
-    first_air_date_year: selectedAirDate
+    first_air_date_year: selectedAirDate,
   };
 
   const url = "api/discover";
@@ -67,7 +67,7 @@ export function useDiscoverDramasTMDB({
     selectedLanguage,
     selectedStatus,
     selectedOrder,
-    selectedAirDate
+    selectedAirDate,
   ];
 
   const fetchDramas = ({ pageParam = 1 }) => {
@@ -80,14 +80,14 @@ export function useDiscoverDramasTMDB({
     data,
     fetchNextPage,
     hasNextPage,
-    isFetchingNextPage
+    isFetchingNextPage,
   } = useInfiniteQuery([...queryKeys], fetchDramas, {
     getNextPageParam: (lastPage) => {
       const logicalNextPage = lastPage.page + 1;
       return logicalNextPage <= lastPage.total_pages
         ? logicalNextPage
         : undefined;
-    }
+    },
   });
 
   const numLoadedResults = calculateLoadedResultsNum(data);
@@ -101,14 +101,14 @@ export function useDiscoverDramasTMDB({
     hasNextPage,
     isFetchingNextPage,
     numLoadedResults,
-    totalNumResults
+    totalNumResults,
   ];
 }
 
 export function useSearchDramasTMDB({ searchTerm }) {
   const urlParams = {
     query: searchTerm,
-    language: "en-US"
+    language: "en-US",
   };
   const url = "api/search";
   const queryKeys = ["search", searchTerm];
@@ -121,10 +121,7 @@ export function useSearchDramasTMDB({ searchTerm }) {
     });
   };
 
-
-
   const automaticLoadingPageCount = useRef(0);
-
 
   const {
     isLoading,
@@ -132,14 +129,14 @@ export function useSearchDramasTMDB({ searchTerm }) {
     data,
     fetchNextPage,
     hasNextPage,
-    isFetchingNextPage
+    isFetchingNextPage,
   } = useInfiniteQuery(queryKeys, fetchDramas, {
     getNextPageParam: (lastPage) => {
       const logicalNextPage = lastPage.page + 1;
       return logicalNextPage <= lastPage.total_pages
         ? logicalNextPage
         : undefined;
-    }
+    },
   });
 
   useEffect(() => {
@@ -169,6 +166,6 @@ export function useSearchDramasTMDB({ searchTerm }) {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-    numLoadedResults
+    numLoadedResults,
   ];
 }

@@ -9,14 +9,12 @@ export default function Layout({ children }) {
     <>
       <Head>
         <title key="title">Asian Dramas</title>
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ErrorBoundary
-        FallbackComponent={ErrorFallback}
-      >
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
         {children}
       </ErrorBoundary>
-      <Footer/>
+      <Footer />
     </>
   );
 }

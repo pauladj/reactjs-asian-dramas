@@ -2,7 +2,8 @@
   "extends": [
     "eslint:recommended",
     "next/core-web-vitals",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "prettier"
   ],
   "plugins": [
     "jsx-a11y"
@@ -17,5 +18,23 @@
   "env": {
     "es6": true,
     "browser": true
+  },
+  "rules": {
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "hrefLeft",
+          "hrefRight"
+        ],
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ]
   }
 }

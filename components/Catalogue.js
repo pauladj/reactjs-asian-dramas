@@ -4,7 +4,7 @@ import CatalogueDiscover from "./CatalogueDiscover";
 import CatalogueSearch from "./CatalogueSearch";
 
 export default function Catalogue() {
-  const [searchTerm, setSearchTerm] = useState(""); // TODO useRef instead?? we don't want to render anything if it changes
+  const [searchTerm, setSearchTerm] = useState("");
   const [apiSearchTerm, setApiSearchTerm] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("ko");
   const [selectedAirDate, setSelectedAirDate] = useState("");

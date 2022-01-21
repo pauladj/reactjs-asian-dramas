@@ -6,22 +6,23 @@ import Image from "next/image";
 import RatingCircle from "./RatingCircle";
 
 export default function CatalogueResultsItem({
-                                               id,
-                                               voteAverage,
-                                               image,
-                                               firstAirDate,
-                                               name,
-                                               originalName
-                                             }) {
+  id,
+  voteAverage,
+  image,
+  firstAirDate,
+  name,
+  originalName,
+}) {
   return (
     <div className="mt-7 pb-4">
       <Link href={"/" + id}>
         <a>
-          <div
-            className="relative w-full h-48 lg:h-56 hover:scale-105 transition-transform duration-500">
+          <div className="relative w-full h-48 lg:h-56 hover:scale-105 transition-transform duration-500">
             <Image
               src={
-                image ? "https://image.tmdb.org/t/p/w500" + image : fallbackImage
+                image
+                  ? "https://image.tmdb.org/t/p/w500" + image
+                  : fallbackImage
               }
               alt={name + " cover"}
               layout="fill"
@@ -42,7 +43,7 @@ export default function CatalogueResultsItem({
           <p className="text-body-sm text-gray-400">Aired on {firstAirDate}</p>
         </div>
         <div className="-mt-1">
-          {voteAverage ? <RatingCircle rating={voteAverage}/> : ""}
+          {voteAverage ? <RatingCircle rating={voteAverage} /> : ""}
         </div>
       </div>
     </div>
@@ -55,11 +56,11 @@ CatalogueResultsItem.propTypes = {
   image: PropTypes.string,
   firstAirDate: PropTypes.string,
   name: PropTypes.string,
-  originalName: PropTypes.string
+  originalName: PropTypes.string,
 };
 
 CatalogueResultsItem.defaultProps = {
   firstAirDate: "undefined",
   name: "No name found",
-  originalName: "No original name found"
+  originalName: "No original name found",
 };

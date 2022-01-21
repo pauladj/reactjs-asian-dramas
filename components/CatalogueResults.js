@@ -32,9 +32,10 @@ export default function CatalogueResults({
         {data && numLoadedResults < 1 && "No results"}
       </div>
 
-      {data && numLoadedResults > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
-          {data.pages.map((page, index) => {
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 min-h-[50vh]">
+        {data &&
+          numLoadedResults > 0 &&
+          data.pages.map((page, index) => {
             return (
               <React.Fragment key={index}>
                 {page.results.map((drama) => (
@@ -51,8 +52,7 @@ export default function CatalogueResults({
               </React.Fragment>
             );
           })}
-        </div>
-      )}
+      </div>
 
       {data && numLoadedResults > 0 && hasNextPage && (
         <button

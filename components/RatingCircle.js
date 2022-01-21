@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function RatingCircle({ rating }) {
-  const roundedRating = Math.round(rating * 10) / 10
+  const roundedRating = Math.round(rating * 10) / 10;
   const endArcDegree = ratingToDegree(roundedRating);
   const arcPath = describeArc(20, 20, 16, 0, endArcDegree);
 

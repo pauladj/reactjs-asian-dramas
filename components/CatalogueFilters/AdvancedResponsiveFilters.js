@@ -8,11 +8,11 @@ import { STATUS } from "../../utils/constants";
 import PropTypes from "prop-types";
 
 export default function AdvancedResponsiveFilters({
-                                                    selectedStatus,
-                                                    selectedAirDate,
-                                                    setSelectedStatus,
-                                                    setSelectedAirDate
-                                                  }) {
+  selectedStatus,
+  selectedAirDate,
+  setSelectedStatus,
+  setSelectedAirDate,
+}) {
   const dropdownRef = useRef(undefined);
   const modalRef = useRef(undefined);
   const buttonRef = useRef(undefined);
@@ -137,7 +137,7 @@ AdvancedResponsiveFilters.propTypes = {
   selectedStatus: PropTypes.string,
   selectedAirDate: PropTypes.string,
   setSelectedStatus: PropTypes.func.isRequired,
-  setSelectedAirDate: PropTypes.func.isRequired
+  setSelectedAirDate: PropTypes.func.isRequired,
 };
 
 const DropDown = React.forwardRef(({ children }, ref) => (

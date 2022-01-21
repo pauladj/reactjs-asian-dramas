@@ -10,7 +10,12 @@ export default function DramaHeader() {
         <Link href="/">
           <a>
             <div className="w-full">
-              <Image src={arrowLeft} alt="Go back icon" width={20} height={20}/>
+              <Image
+                src={arrowLeft}
+                alt="Go back icon"
+                width={20}
+                height={20}
+              />
             </div>
           </a>
         </Link>

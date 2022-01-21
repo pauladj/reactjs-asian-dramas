@@ -323,8 +323,8 @@ export const dramas = () => {
         vote_count: 256,
       },
     ],
-    total_pages: 215,
-    total_results: 4295,
+    total_pages: 1,
+    total_results: 8,
   };
 };
 

@@ -1,7 +1,6 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="screenshots/cover-image.png" alt="Project logo"></a>
-</p>
+<div align="center">
+ <img src="screenshots/cover-image.jpg?raw=true" alt="Project logo"></a>
+</div>
 
 
 ## 📺 Asian Dramas
@@ -33,31 +32,28 @@ TMDB_SERVER_URL=https://api.themoviedb.org/3/
 
 ### Run the app
 
-- `npm run dev`: Run the development server
-- `npm run build`: Build the production app
-- `npm run start`: Serve the production app
-- `npm run lint`: Check code errors
-- `npm run format`: Format the code
+- `npm run dev` Run the development server
+- `npm run build` Build the production app
+- `npm run start` Serve the production app
+- `npm run lint` Check code errors
+- `npm run format` Format the code
 
 
 
 ## 👀 Screenshots 
 
-<img width="600" src="screenshots\main-page.jpg" alt="Main page screenshot"  />
+<div align="center">
+<img width="600" src="screenshots\main-page.jpg?raw=true" alt="Main page screenshot"  />
 
-<img width="700" src="screenshots\individual-page.jpg" alt="individual-page"  />
-
+<img width="700" src="screenshots\individual-page.jpg?raw=true" alt="individual-page"  />
+</div>
 
 
 ## ⛏️ Built Using 
 - [Next.js](https://nextjs.org/) - React Framework
-
 - [React](https://reactjs.org/) - Javascript library. React hooks
-
 - [React Query](https://react-query.tanstack.com/) - Fetch, cache and update data
-
 - [Tailwind CSS](https://tailwindcss.com/) - Utility first CSS Framework
-
 - [Headless UI Transition](https://headlessui.dev/)  - Enter/leave transitions in elements 
 
   

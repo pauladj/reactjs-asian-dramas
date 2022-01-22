@@ -1,34 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="screenshots/cover-image.png" alt="Project logo"></a>
+</p>
 
-## Getting Started
 
-First, run the development server:
+## 📺 Asian Dramas
 
-```bash
-npm run dev
-# or
-yarn dev
+Discover the latest Asian Dramas. You can also filter the dramas by the release year or language.
+
+👉 Live version: https://asian-dramas.vercel.app/
+
+
+
+## 🎨 UI Design
+
+***Click below to View the app Design 👇***
+
+[![Einsen Figma Design](https://img.shields.io/static/v1?label=Asian%20Dramas&message=Figma&color=red&style=for-the-badge&logo=figma)](https://www.figma.com/file/2Cnk7KKJoZ6H2UprgOiC6G/Discover-Asian-Dramas?node-id=0%3A1) 
+
+
+
+## 🔧 Setup 
+
+### Environment variables
+
+Create a file `.env.local` in the project root folder with:
+
+```.env
+TMDB_API_KEY=
+TMDB_SERVER_URL=https://api.themoviedb.org/3/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run the app
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- `npm run dev`: Run the development server
+- `npm run build`: Build the production app
+- `npm run start`: Serve the production app
+- `npm run lint`: Check code errors
+- `npm run format`: Format the code
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## 👀 Screenshots 
 
-To learn more about Next.js, take a look at the following resources:
+<img width="600" src="screenshots\main-page.jpg" alt="Main page screenshot"  />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img width="700" src="screenshots\individual-page.jpg" alt="individual-page"  />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⛏️ Built Using 
+- [Next.js](https://nextjs.org/) - React Framework
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [React](https://reactjs.org/) - Javascript library. React hooks
+
+- [React Query](https://react-query.tanstack.com/) - Fetch, cache and update data
+
+- [Tailwind CSS](https://tailwindcss.com/) - Utility first CSS Framework
+
+- [Headless UI Transition](https://headlessui.dev/)  - Enter/leave transitions in elements 
+
+  
+
+## 🎉 Acknowledgements 
+- All the app data is obtained through [TheMovieDB API](https://www.themoviedb.org/)
+
+

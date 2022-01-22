@@ -32,11 +32,11 @@ TMDB_SERVER_URL=https://api.themoviedb.org/3/
 
 ### Run the app
 
-- `npm run dev`: Run the development server
-- `npm run build`: Build the production app
-- `npm run start`: Serve the production app
-- `npm run lint`: Check code errors
-- `npm run format`: Format the code
+- `npm run dev` Run the development server
+- `npm run build` Build the production app
+- `npm run start` Serve the production app
+- `npm run lint` Check code errors
+- `npm run format` Format the code
 
 
 

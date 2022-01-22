@@ -1,7 +1,6 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img  src="screenshots/cover-image.jpg" alt="Project logo"></a>
-</p>
+<div align="center">
+ <img src="screenshots/cover-image.jpg" alt="Project logo"></a>
+</div>
 
 
 ## 📺 Asian Dramas
@@ -43,10 +42,11 @@ TMDB_SERVER_URL=https://api.themoviedb.org/3/
 
 ## 👀 Screenshots 
 
+<div align="center">
 <img width="600" src="screenshots\main-page.jpg" alt="Main page screenshot"  />
 
 <img width="700" src="screenshots\individual-page.jpg" alt="individual-page"  />
-
+</div>
 
 
 ## ⛏️ Built Using 

@@ -51,13 +51,9 @@ TMDB_SERVER_URL=https://api.themoviedb.org/3/
 
 ## ⛏️ Built Using 
 - [Next.js](https://nextjs.org/) - React Framework
-
 - [React](https://reactjs.org/) - Javascript library. React hooks
-
 - [React Query](https://react-query.tanstack.com/) - Fetch, cache and update data
-
 - [Tailwind CSS](https://tailwindcss.com/) - Utility first CSS Framework
-
 - [Headless UI Transition](https://headlessui.dev/)  - Enter/leave transitions in elements 
 
   

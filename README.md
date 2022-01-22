@@ -1,5 +1,5 @@
 <div align="center">
- <img src="screenshots/cover-image.jpg" alt="Project logo"></a>
+ <img src="screenshots/cover-image.jpg?raw=true" alt="Project logo"></a>
 </div>
 
 
@@ -43,9 +43,9 @@ TMDB_SERVER_URL=https://api.themoviedb.org/3/
 ## 👀 Screenshots 
 
 <div align="center">
-<img width="600" src="screenshots\main-page.jpg" alt="Main page screenshot"  />
+<img width="600" src="screenshots\main-page.jpg?raw=true" alt="Main page screenshot"  />
 
-<img width="700" src="screenshots\individual-page.jpg" alt="individual-page"  />
+<img width="700" src="screenshots\individual-page.jpg?raw=true" alt="individual-page"  />
 </div>
 
 
